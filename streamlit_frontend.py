@@ -18,6 +18,7 @@ def receive_data(device_id, device_name, health_data):
     else:
         st.error("Error occurred while receiving Bluetooth data.")
 
+
 def fetch_data():
     response = requests.get('http://localhost:8000/bluetooth_data_app/get_bluetooth_data/')
     if response.status_code == 200:
@@ -56,6 +57,7 @@ def main():
     if st.button("Receive Data"):
         receive_data(device_id, device_name, health_data)
 
+    st.title('Table for data representation')
     fetch_data()
 
 if __name__ == '__main__':

@@ -17,6 +17,8 @@ def receive_bluetooth_data(request):
 
     return Response({'message': 'Bluetooth data received successfully.'})
 
+
+
 @api_view(['GET'])
 def get_bluetooth_data(request):
     data = TimestampedData.objects.select_related('device').all()
